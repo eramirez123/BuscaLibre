@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -35,5 +36,10 @@ public class BuscalibreSteps {
     @Then("^validate that there are results for the author ([^\\\"]*)")
     public void validateAuthorSearchResults(String author){
         results.validateAuthorResults(author);
+    }
+
+    @And("the system enters a random product detail")
+    public void selectRandomProduct(){
+        results.clickOnRandomItem();
     }
 }

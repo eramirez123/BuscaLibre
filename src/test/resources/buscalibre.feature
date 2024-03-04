@@ -50,10 +50,9 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
     @PrecioAleatorio
     Scenario Outline: validate that the price of the search and the detail price match
         When i search the book <bookName>
+        And the system enters a random product detail
 
 
         Examples:
             | bookName              |
-            | Selenium Webdriver    |
-            | Selenium Webdriver    |
             | Selenium Webdriver    |

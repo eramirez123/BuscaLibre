@@ -55,14 +55,14 @@ public class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator))).click();
     }
 
-    //Metodo para hacer click sobre un elemento
-    public List<WebElement> createListOfWebElements(String locator){
-        return driver.findElements(By.xpath(locator));
-    }
-
     //Metodo que guarda el texto de un elemento en la página
     public String getPageText(String locator){
         return find(locator).getText();
+    }
+
+    //Metodo para hacer click sobre un elemento
+    public List<WebElement> createListOfWebElements(String locator){
+        return driver.findElements(By.xpath(locator));
     }
 
 }
