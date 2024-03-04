@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ResultPage extends BasePage {
     private String pageResults = "//div[@class='cantidadProductos']//h2";
+    private String pageResultsNotFound = "//section[@id='noEncontrado']/p[contains(text(),'Lo sentimos')]";
     private String expectedStringFound = "Encontramos ";
+    private String expectedNotFound = "Lo sentimos, pero no encontramos lo que buscas:";
 
     
     public ResultPage(){
@@ -20,6 +22,10 @@ public class ResultPage extends BasePage {
 
     public void validateSearchResultsFound(){
         validateResults(pageResults, expectedStringFound);
+    }
+
+    public void validateSearchResultsNotFound(){
+        validateResults(pageResultsNotFound, expectedNotFound);
     }
 
 

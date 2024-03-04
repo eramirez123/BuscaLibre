@@ -26,4 +26,9 @@ public class BuscalibreSteps {
     public void ValidateSearchResults(){
         results.validateSearchResultsFound();
     }
+
+    @Then("validate that no search results are found")
+    public void validateResultsNotFound(){
+        results.validateSearchResultsNotFound();
+    }
 }

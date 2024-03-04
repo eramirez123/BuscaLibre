@@ -24,6 +24,7 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
     @ResultadosNoEncontrados
     Scenario Outline: Validate book search without results
         When i search the book <bookName>
+        Then validate that no search results are found
 
 
         Examples:
