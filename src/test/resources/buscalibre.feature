@@ -45,3 +45,15 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
             | El coronel no tiene quien le escriba  | Juliana Borrero   |
             | la metamorfosis                       | Paul Pen          |
             | la isla del tesoro                    | Disney            |
+
+
+    @PrecioAleatorio
+    Scenario Outline: validate that the price of the search and the detail price match
+        When i search the book <bookName>
+
+
+        Examples:
+            | bookName              |
+            | Selenium Webdriver    |
+            | Selenium Webdriver    |
+            | Selenium Webdriver    |

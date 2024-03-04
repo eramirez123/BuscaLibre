@@ -14,7 +14,7 @@ import pages.BasePage;
 @CucumberOptions(
     features = "src/test/resources",
     glue = "steps",
-    tags = "@ResultadosPorAutor"
+    tags = "@PrecioAleatorio"
 )
 
 public class BuscalibreRunner {
