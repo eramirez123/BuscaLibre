@@ -13,7 +13,8 @@ import pages.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = "src/test/resources",
-    glue = "steps"
+    glue = "steps",
+    tags = "@ResultadosNoEncontrados"
 )
 
 public class BuscalibreRunner {
