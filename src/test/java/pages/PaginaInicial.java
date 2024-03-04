@@ -10,15 +10,18 @@ public class PaginaInicial extends BasePage{
         super(driver);
     }
 
+    //Ir a la página de Buscalibre colombia
     public void goToBuscalibre(){
         driver.manage().window().maximize();
         navigateTo("https://www.buscalibre.com.co/");
     }
 
+    //Escribir el libro que se va a buscar
     public void searchBook(String bookName){
         write(searchBox, bookName);
     }
 
+    //Click en botón buscar
     public void clickSearchButton(){
         clickElement(buttonSearch);
     }

@@ -60,6 +60,7 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));
     }
 
+    //Metodo que guarda el texto de un elemento en la página
     public String getPageText(String locator){
         return find(locator).getText();
     }
