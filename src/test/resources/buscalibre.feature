@@ -32,3 +32,15 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
             | selenium con java                     |
             | Un libro que no debería existir       |
             | la metamorfosis                       |
+
+
+    @ResultadosPorAutor @ResultadosEncontrados
+    Scenario Outline: Validate that the search is filtered by author and that results are found
+        When i search the book <bookName>
+
+
+        Examples:
+            | bookName                              | author            |
+            | El coronel no tiene quien le escriba  | Juliana Borrero   |
+            | la metamorfosis                       | Paul Pen          |
+            | la isla del tesoro                    | Disney            |
