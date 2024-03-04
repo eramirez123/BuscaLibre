@@ -37,6 +37,7 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
     @ResultadosPorAutor @ResultadosEncontrados
     Scenario Outline: Validate that the search is filtered by author and that results are found
         When i search the book <bookName>
+        Then validate that there are results for the author <author>
 
 
         Examples:

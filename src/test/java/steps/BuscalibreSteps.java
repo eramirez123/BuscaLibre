@@ -31,4 +31,9 @@ public class BuscalibreSteps {
     public void validateResultsNotFound(){
         results.validateSearchResultsNotFound();
     }
+
+    @Then("^validate that there are results for the author ([^\\\"]*)")
+    public void validateAuthorSearchResults(String author){
+        results.validateAuthorResults(author);
+    }
 }

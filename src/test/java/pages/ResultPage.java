@@ -7,7 +7,8 @@ public class ResultPage extends BasePage {
     private String pageResultsNotFound = "//section[@id='noEncontrado']/p[contains(text(),'Lo sentimos')]";
     private String expectedStringFound = "Encontramos ";
     private String expectedNotFound = "Lo sentimos, pero no encontramos lo que buscas:";
-
+    private String authorFound = "//input[@name='fa' and @type ='checkbox' and @value = '%s']";
+    private String filterResult = "//div[@class='div-pill']";
     
     public ResultPage(){
         super(driver);
@@ -28,5 +29,11 @@ public class ResultPage extends BasePage {
         validateResults(pageResultsNotFound, expectedNotFound);
     }
 
+    public void validateAuthorResults(String author){
+        String xpathAuthor = String.format(authorFound, author.toLowerCase());
+        clickElement(xpathAuthor);
+        validateResults(filterResult, author);
+        validateResults(pageResults, expectedStringFound);
+    }
 
 }
