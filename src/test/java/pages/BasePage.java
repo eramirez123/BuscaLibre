@@ -60,4 +60,8 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));
     }
 
+    public String getPageText(String locator){
+        return find(locator).getText();
+    }
+
 }

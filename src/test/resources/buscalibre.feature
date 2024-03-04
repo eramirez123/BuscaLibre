@@ -6,6 +6,7 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
     Scenario Outline: validate book search with results
         Given go to buscalibre page
         When i search the book <bookName>
+        Then validate that any search results are found
 
         Examples:
             | bookName                              |
