@@ -47,12 +47,15 @@ Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
             | la isla del tesoro                    | Disney            |
 
 
-    @PrecioAleatorio
+    @PrecioAleatorio @ResultadosEncontrados
     Scenario Outline: validate that the price of the search and the detail price match
         When i search the book <bookName>
         And the system enters a random product detail
-
+        Then Valid that the price shown in the search result matches the price shown in the detail
 
         Examples:
             | bookName              |
             | Selenium Webdriver    |
+            | cien años de soledad  |
+            | la metamorfosis       |
+            | la isla del tesoro    |

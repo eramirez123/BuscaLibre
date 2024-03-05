@@ -1,6 +1,15 @@
 package pages;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class DetailsPage extends BasePage{
+
+    private String expectedName;
+    private String expectedPrice;
+    private String foundName;
+    private String foundPrice;
+    String nameLocator = "//p[@class='tituloProducto']";
+    String priceLocator = "//p[contains(@class, 'precioAhora ')]/span";
 
     ResultPage result = new ResultPage();
 
@@ -11,11 +20,22 @@ public class DetailsPage extends BasePage{
     public void selectRandomBook(){
         result.clickOnRandomItem();
     }
-    
 
-    public void getExpectedValues(){
-        System.out.println(result.getBookName());
-        System.out.println(result.getBookPrice());
+    private void getExpectedValues(){
+        expectedName = result.getBookName();
+        expectedPrice = result.getBookPrice();
+    }
+
+    private void getDetailsValues(){
+        foundName = getPageText(nameLocator);
+        foundPrice = getPageText(priceLocator);
+    }
+
+    public void validateMatches(){
+        getExpectedValues();
+        getDetailsValues();
+        assertEquals(expectedName, foundName);
+        assertEquals(expectedPrice, foundPrice);
     }
     
 }

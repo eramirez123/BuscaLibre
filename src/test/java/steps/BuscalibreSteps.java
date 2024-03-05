@@ -43,6 +43,10 @@ public class BuscalibreSteps {
     @And("the system enters a random product detail")
     public void selectRandomProduct(){
         details.selectRandomBook();
-        details.getExpectedValues();
+    }
+
+    @Then("Valid that the price shown in the search result matches the price shown in the detail")
+    public void validateMatches(){
+        details.validateMatches();
     }
 }
