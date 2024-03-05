@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.DetailsPage;
 import pages.PaginaInicial;
 import pages.ResultPage;
 
@@ -11,6 +12,7 @@ public class BuscalibreSteps {
     
     PaginaInicial landingPage = new PaginaInicial();
     ResultPage results = new ResultPage();
+    DetailsPage details = new DetailsPage();
 
     @Given("go to buscalibre page")
     public void goToBuscalibrePage(){
@@ -40,6 +42,7 @@ public class BuscalibreSteps {
 
     @And("the system enters a random product detail")
     public void selectRandomProduct(){
-        results.clickOnRandomItem();
+        details.selectRandomBook();
+        details.getExpectedValues();
     }
 }

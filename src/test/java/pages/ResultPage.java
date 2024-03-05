@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
 import java.util.Random;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class ResultPage extends BasePage {
@@ -19,7 +18,7 @@ public class ResultPage extends BasePage {
     private String listOfPrices = "//p[contains(@class, 'precio-ahora')]/strong";
     private String listOfNames = "//h3[contains(@class, 'nombre')]";
     
-    
+    Book book = new Book();
 
     public ResultPage(){
         super(driver);
@@ -57,19 +56,23 @@ public class ResultPage extends BasePage {
 
         Random rand = new Random();
         int r = rand.nextInt(bookList.size());
-
-
-        String expectedElement = bookList.get(r).getText();
+        
         String expectedPrice = prices.get(r).getText();
         String expectedname = names.get(r).getText();
+
+        book.setName(expectedname);
+        book.setPrice(expectedPrice);
+        
         WebElement clickeableTitle = names.get(r);
         clickeableTitle.click();
+    }
 
-        System.out.println(expectedElement);
-        System.out.println("****************************");
-        
-        System.out.println(expectedname);
-        System.out.println(expectedPrice);
+    public String getBookName(){
+        return book.getName();
+    }
+
+    public String getBookPrice(){
+        return book.getPrice();
     }
 
 }
