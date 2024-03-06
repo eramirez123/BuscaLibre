@@ -1,3 +1,4 @@
+@All
 Feature: Navegar a buscaLibre colombia y validar el funcionamiento de la página
     para validar el funcionamiento de la pagina
     como persona que no se ha logueado

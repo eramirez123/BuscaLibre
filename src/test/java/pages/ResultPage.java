@@ -49,6 +49,8 @@ public class ResultPage extends BasePage {
         validateResults(pageResults, expectedStringFound);
     }
 
+
+    //Selecciona un item aleatorio, captura los datos y hace click para ver el detalle
     public void clickOnRandomItem(){
         List<WebElement> bookList = createListOfWebElements(listResults);
         List<WebElement> prices = createListOfWebElements(listOfPrices);
@@ -56,21 +58,20 @@ public class ResultPage extends BasePage {
 
         Random rand = new Random();
         int r = rand.nextInt(bookList.size());
-        
-        String expectedPrice = prices.get(r).getText();
-        String expectedname = names.get(r).getText();
 
-        book.setName(expectedname);
-        book.setPrice(expectedPrice);
+        book.setName(names.get(r).getText());
+        book.setPrice(prices.get(r).getText());
         
         WebElement clickeableTitle = names.get(r);
         clickeableTitle.click();
     }
 
+    //Trae el nombre del elemento
     public String getBookName(){
         return book.getName();
     }
 
+    //Trae el precio del elemento
     public String getBookPrice(){
         return book.getPrice();
     }
